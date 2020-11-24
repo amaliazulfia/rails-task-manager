@@ -1,0 +1,21 @@
+<h1>Hurrra</h1>
+
+<ul>
+  <% @tasks.each do |task| %>
+    <li> <input type="checkbox">
+    <%= link_to task.title, task_path(task)
+    
+    # <input type="checkbox"><%= task.title 
+    %>
+<%= link_to task_path(task), method: :delete, data: { confirm: "Delete #{task.title}?"} do %>
+  <%= image_tag("https://img.icons8.com/carbon-copy/100/000000/delete-forever--v1.png", class: "small")  %>
+<% end %>
+
+   
+    </li>
+  <% end %>
+
+</ul>
+
+<%= link_to "+ Create new task", new_task_path %>
+
